@@ -1,0 +1,12 @@
+# OS or Editor folders
+.DS_Store
+Thumbs.db
+
+# NPM packages folder.
+node_modules/
+
+.next/
+/yarn-error.log
+
+/.npmrc
+/.env*
