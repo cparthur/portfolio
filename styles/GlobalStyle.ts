@@ -14,6 +14,7 @@ export default createGlobalStyle`
         src: url('#') format('woff');
     } */
 
+
     /* Fluid typography */
     html {
         font-size: ${`${minFs}px`};
@@ -27,7 +28,9 @@ export default createGlobalStyle`
         }
     }
 
+
     /* Custom styles*/
+
     h1 {
         font-family: 'nunito', sans-serif;
         font-weight: 400;
