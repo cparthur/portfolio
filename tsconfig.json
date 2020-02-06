@@ -20,7 +20,8 @@
         "paths": {
             "components": ["./components"],
             "pages": ["./pages"],
-            "styles": ["./styles"]
+            "styles": ["./styles"],
+            "layouts": ["./layouts"]
         }
     },
     "exclude": ["node_modules"],

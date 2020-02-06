@@ -5,6 +5,15 @@ export const reset = css`
    v2.0 | 20110126
    License: none (public domain)
     */
+    html {
+        box-sizing: border-box;
+    }
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+
     html,
     body,
     div,
