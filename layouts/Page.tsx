@@ -3,12 +3,12 @@ import media from 'styles/media';
 
 import Header from 'layouts/Header';
 
-type Types = {
+type Props = {
     children?: React.ReactElement;
     isFullScreen?: boolean;
 };
 
-const Page = ({ children, isFullScreen }: Types) => (
+const Page = ({ children, isFullScreen }: Props) => (
     <PageContainer isFullScreen={isFullScreen}>
         <InnerContainer isFullScreen={isFullScreen}>
             <Header />
