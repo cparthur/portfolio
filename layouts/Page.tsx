@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import media from 'styles/media';
 
+import Header from 'layouts/Header';
+
 type Types = {
     children?: React.ReactElement;
     isFullScreen?: boolean;
@@ -8,7 +10,10 @@ type Types = {
 
 const Page = ({ children, isFullScreen }: Types) => (
     <PageContainer isFullScreen={isFullScreen}>
-        <InnerContainer isFullScreen={isFullScreen}>{children}</InnerContainer>
+        <InnerContainer isFullScreen={isFullScreen}>
+            <Header />
+            {children}
+        </InnerContainer>
     </PageContainer>
 );
 
