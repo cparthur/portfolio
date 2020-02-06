@@ -20,6 +20,10 @@ declare module 'styled-components' {
                 gradient: string;
             };
         };
+        fontFamilies: {
+            prim: string;
+            sec: string;
+        };
         fontSizes: string[];
         fontWeights: {
             light: number;

@@ -22,6 +22,10 @@ const light = {
 };
 
 const defaultTheme = {
+    fontFamilies: {
+        prim: '"nunito", sans-serif',
+        sec: 'sans-serif',
+    },
     // Major Second modular scale system
     fontSizes: [
         '0.79rem', // 0 -> 12.64px
