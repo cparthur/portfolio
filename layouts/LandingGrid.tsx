@@ -30,8 +30,10 @@ const Grid = styled.main`
 
     ${media.laptop} {
         display: grid;
-        grid-template-columns: 40% 20% 40%;
+        grid-template-columns: 2fr 1fr 2fr;
         grid-template-rows: 50% 50%;
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
         grid-template-areas:
             'about tools references'
             'about tools contact';
