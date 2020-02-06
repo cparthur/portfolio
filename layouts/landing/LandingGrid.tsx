@@ -4,7 +4,7 @@ import media from 'styles/media';
 
 const LandingGrid = () => (
     <Grid>
-        <Title>Arthur Molinos portfolio</Title>
+        <Title>Arthur Molinos portfolio on develop</Title>
     </Grid>
 );
 
