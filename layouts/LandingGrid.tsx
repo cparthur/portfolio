@@ -2,12 +2,21 @@ import styled from 'styled-components';
 
 import media from 'styles/media';
 
-const LandingGrid = () => (
+type Props = {
+    children: {
+        about: React.ReactElement;
+        tools: React.ReactElement;
+        references: React.ReactElement;
+        contact: React.ReactElement;
+    };
+};
+
+const LandingGrid = ({ children }: Props) => (
     <Grid>
-        <AboutMe>About me!</AboutMe>
-        <Tools>Tools I use!</Tools>
-        <References>Some of my references!</References>
-        <Contact>arthur.molinos@gmail.com</Contact>
+        <AboutContainer>{children.about}</AboutContainer>
+        <ToolsContainer>{children.tools}</ToolsContainer>
+        <ReferencesContainer>{children.references}</ReferencesContainer>
+        <ContactContainer>{children.contact}</ContactContainer>
     </Grid>
 );
 
@@ -29,12 +38,12 @@ const Grid = styled.main`
     }
 `;
 
-const AboutMe = styled.div`
+const AboutContainer = styled.div`
     grid-area: about;
     background-color: red;
 `;
 
-const Tools = styled.div`
+const ToolsContainer = styled.div`
     display: none;
     grid-area: tools;
     background-color: violet;
@@ -44,12 +53,12 @@ const Tools = styled.div`
     }
 `;
 
-const References = styled.div`
+const ReferencesContainer = styled.div`
     grid-area: references;
     background-color: green;
 `;
 
-const Contact = styled.div`
+const ContactContainer = styled.div`
     grid-area: contact;
     background-color: blue;
 `;
