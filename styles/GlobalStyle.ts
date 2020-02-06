@@ -30,9 +30,7 @@ export default createGlobalStyle`
 
 
     /* Custom styles*/
-
-    h1 {
-        font-family: 'nunito', sans-serif;
-        font-weight: 400;
+    body {
+        font-family: ${({ theme }) => theme.fontFamilies.prim};
     }
 `;
