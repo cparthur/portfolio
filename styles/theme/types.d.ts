@@ -29,6 +29,7 @@ declare module 'styled-components' {
             light: number;
             regular: number;
             bold: number;
+            black: number;
         };
         lineHeights: {
             body: number;
