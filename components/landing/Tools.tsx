@@ -35,15 +35,14 @@ const Container = styled.div`
 
 const ScrollContainer = styled.div`
     max-height: 100%;
-    background-color: greenyellow;
-    overflow: hidden;
+    overflow-y: scroll;
 `;
 
 const Tool = styled.div`
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
     margin: 0.5rem auto;
-    background-color: gray;
+    background-color: ${({ theme }) => theme.colors.bg.sec};
 `;
 
 const AsideText = styled.p`
