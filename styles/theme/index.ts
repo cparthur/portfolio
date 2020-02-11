@@ -35,15 +35,16 @@ const defaultTheme = {
         '1.266rem', // 4 -> 20.25px
         '1.424rem', // 5 -> 22.78px
         '1.602rem', // 6 -> 25.63px
-        '1.802rem', //  -> 28.83px
+        '1.802rem', // 7 -> 28.83px
     ],
     fontWeights: {
         light: 300,
         regular: 400,
-        bold: 600,
+        bold: 700,
+        black: 900,
     },
     lineHeights: {
-        body: 1.45,
+        body: 1.5,
         heading: 1.3,
     },
 };
