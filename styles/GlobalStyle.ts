@@ -1,30 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
 
-import media, { Sizes } from 'styles/media';
+import media from 'styles/media';
 import reset from './reset';
-
-const minFs = '16';
-const maxFs = '20';
 
 export default createGlobalStyle`
     ${reset}
-    
-    /* @font-face {
-        font-family: 'custom-font';
-        src: url('#') format('woff');
-    } */
 
-
-    /* Fluid typography */
     html {
-        font-size: ${`${minFs}px`};
+        font-size: 16px;
 
-        ${media.mobileM} {
-            font-size: ${`calc(${minFs}px + (${maxFs} - ${minFs}) * ((100vw - ${Sizes.mobileS}px) / (${Sizes.laptopL} - ${Sizes.mobileS})))`};
+        ${media.laptop} {
+            font-size: 14px;
         }
 
-        ${media.laptopL} {
-            font-size: ${`${maxFs}px`};
+        ${media.laptopM} {
+            font-size: 16px;
+        }
+
+        ${media.desktop} {
+            font-size: 20px;
         }
     }
 
@@ -32,5 +26,11 @@ export default createGlobalStyle`
     /* Custom styles*/
     body {
         font-family: ${({ theme }) => theme.fontFamilies.prim};
+        color: ${({ theme }) => theme.colors.text.prim};
+        line-height: ${({ theme }) => theme.lineHeights.body};
+    }
+
+    h1, h2 {
+        line-height: ${({ theme }) => theme.lineHeights.heading};
     }
 `;
