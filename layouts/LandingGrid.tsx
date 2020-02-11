@@ -75,18 +75,36 @@ interface StyledProps {
 
 const Grid = styled.main<StyledProps>`
     flex-grow: 1;
-    max-width: 76rem;
-    margin: 0 auto;
 
     ${media.laptop} {
         display: grid;
-        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        grid-column-gap: 1.5rem;
+        grid-column-gap: 10%;
         grid-row-gap: 1.5rem;
+        grid-template-areas:
+            'about references'
+            'about contact';
+        margin-top: 2rem;
+    }
+
+    ${media.laptopM} {
+        grid-template-columns: 1fr minmax(4rem, 7rem) 1fr;
+        grid-column-gap: 4rem;
         grid-template-areas:
             'about tools references'
             'about tools contact';
+        margin-top: 0;
+    }
+
+    ${media.laptopL} {
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    ${media.desktop} {
+        grid-template-columns: 1.5fr 1fr 1.5fr;
+        max-width: 96rem;
     }
 `;
 
@@ -100,14 +118,14 @@ const ToolsContainer = styled.div`
     display: none;
     grid-area: tools;
 
-    ${media.laptop} {
+    ${media.laptopM} {
         display: block;
     }
 `;
 
 const ReferencesContainer = styled.div`
     grid-area: references;
-    margin: 3rem 0;
+    margin: 4rem 0;
 
     ${media.laptop} {
         margin: 0;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// import media from 'styles/media';
+import media from 'styles/media';
 
 const Header = () => (
     <Container id="header">
@@ -21,6 +21,10 @@ const Container = styled.div`
     display: flex;
     align-items: baseline;
     margin-bottom: 3.5rem;
+
+    ${media.desktop} {
+        margin-bottom: 5rem;
+    }
 `;
 
 const LogoContainer = styled.div``;

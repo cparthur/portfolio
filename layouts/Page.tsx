@@ -27,8 +27,8 @@ const Page = ({ children, isFullScreen }: Props) => {
             <InnerContainer id="inner-container" isFullScreen={isFullScreen}>
                 <Header />
                 {children}
-                <CopyRights>© Arthur Molinos {new Date().getUTCFullYear()}</CopyRights>
             </InnerContainer>
+            <CopyRights>© Arthur Molinos {new Date().getUTCFullYear()}</CopyRights>
         </PageContainer>
     );
 };
@@ -51,9 +51,12 @@ const PageContainer = styled.div<StyledProps>`
     padding: 1rem;
     background: ${({ theme }) => theme.colors.bg.pageGradient};
 
+    ${media.tablet} {
+        padding: 2rem;
+    }
+
     ${media.laptop} {
         ${({ isFullScreen }) => isFullScreen && 'height: 100vh'};
-        padding: 2rem;
     }
 `;
 
@@ -62,14 +65,18 @@ const InnerContainer = styled.div<StyledProps>`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 6rem;
     background-color: ${({ theme }) => theme.colors.bg.prim};
     box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.25);
     ${({ isFullScreen }) => isFullScreen && 'overflow: hidden'};
     z-index: 1;
 
-    ${media.laptop} {
-        padding: 4rem;
+    ${media.tablet} {
+        padding: 6rem;
+    }
+
+    ${media.laptopM} {
+        padding: 4rem 6rem;
     }
 
     ${media.laptopL} {
@@ -77,14 +84,29 @@ const InnerContainer = styled.div<StyledProps>`
     }
 
     ${media.desktop} {
-        padding: 10rem 12rem;
+        padding: 6rem 10rem;
     }
 `;
 
 const CopyRights = styled.p`
     position: absolute;
-    bottom: 0.5rem;
-    left: calc(50% - 4.2rem);
-    font-size: ${({ theme }) => theme.fontSizes[0]};
+    bottom: 1.5rem;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-size: 0.7rem;
     color: ${({ theme }) => theme.colors.text.quar};
+    z-index: 1;
+
+    ${media.tablet} {
+        bottom: 3rem;
+    }
+
+    ${media.laptop} {
+        bottom: 0.5rem;
+        right: 2rem;
+        left: inherit;
+        color: ${({ theme }) => theme.colors.white};
+        opacity: 0.5;
+    }
 `;
