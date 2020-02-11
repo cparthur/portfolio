@@ -8,6 +8,7 @@ export enum Sizes {
     laptopM = 1280,
     laptopL = 1440,
     desktop = 1920,
+    infinite = 2560,
 }
 
 export class Queries {
@@ -19,6 +20,7 @@ export class Queries {
     public static readonly laptopM = Queries.custom(Sizes.laptopM);
     public static readonly laptopL = Queries.custom(Sizes.laptopL);
     public static readonly desktop = Queries.custom(Sizes.desktop);
+    public static readonly infinite = Queries.custom(Sizes.infinite);
 
     public static custom(minWidth: number) {
         return `@media (min-width: ${minWidth}px)`;
