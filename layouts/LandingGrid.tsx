@@ -103,8 +103,12 @@ const Grid = styled.main<StyledProps>`
     }
 
     ${media.desktop} {
-        grid-template-columns: 1.5fr 1fr 1.5fr;
+        grid-template-columns: 2fr 1fr 2fr;
         max-width: 96rem;
+    }
+
+    ${media.infinite} {
+        grid-template-columns: 1fr 0.75fr 1fr;
     }
 `;
 
