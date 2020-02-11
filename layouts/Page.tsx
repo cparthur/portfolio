@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import media from 'styles/media';
 
@@ -8,14 +9,29 @@ type Props = {
     isFullScreen?: boolean;
 };
 
-const Page = ({ children, isFullScreen }: Props) => (
-    <PageContainer isFullScreen={isFullScreen}>
-        <InnerContainer isFullScreen={isFullScreen}>
-            <Header />
-            {children}
-        </InnerContainer>
-    </PageContainer>
-);
+const Page = ({ children, isFullScreen }: Props) => {
+    const [showChild, setShowChild] = useState(false);
+
+    // Wait until after client-side hydration to show
+    useEffect(() => {
+        setShowChild(true);
+    }, []);
+
+    if (!showChild) {
+        // You can show some kind of placeholder UI here
+        return null;
+    }
+
+    return (
+        <PageContainer isFullScreen={isFullScreen}>
+            <InnerContainer id="inner-container" isFullScreen={isFullScreen}>
+                <Header />
+                {children}
+                <CopyRights>© Arthur Molinos {new Date().getUTCFullYear()}</CopyRights>
+            </InnerContainer>
+        </PageContainer>
+    );
+};
 
 export default Page;
 
@@ -48,10 +64,27 @@ const InnerContainer = styled.div<StyledProps>`
     flex-direction: column;
     padding: 1.5rem;
     background-color: ${({ theme }) => theme.colors.bg.prim};
+    box-shadow: 0px 2px 32px rgba(0, 0, 0, 0.25);
     ${({ isFullScreen }) => isFullScreen && 'overflow: hidden'};
     z-index: 1;
 
     ${media.laptop} {
         padding: 4rem;
     }
+
+    ${media.laptopL} {
+        padding: 6rem 8rem;
+    }
+
+    ${media.desktop} {
+        padding: 10rem 12rem;
+    }
+`;
+
+const CopyRights = styled.p`
+    position: absolute;
+    bottom: 0.5rem;
+    left: calc(50% - 4.2rem);
+    font-size: ${({ theme }) => theme.fontSizes[0]};
+    color: ${({ theme }) => theme.colors.text.quar};
 `;
