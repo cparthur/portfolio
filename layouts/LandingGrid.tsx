@@ -46,7 +46,7 @@ const LandingGrid = ({ children }: Props) => {
 
             const computedGridHeight = containerHeight - containerPadding - headerHeight;
 
-            if (windowWidth > Sizes.laptop) {
+            if (windowWidth >= Sizes.laptop) {
                 targetRef.current.style.maxHeight = `${computedGridHeight}px`;
             } else {
                 targetRef.current.style.maxHeight = 'inherit';
@@ -119,9 +119,4 @@ const ContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-bottom: 2rem;
-
-    ${media.laptop} {
-        margin: 0;
-    }
 `;
